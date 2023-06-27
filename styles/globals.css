@@ -41,7 +41,7 @@ img, video {
   max-height: 100%;
 }
 
-input {
+input, textarea {
   background-color: var(--bg-grey);
   color: var(--grey-color);
   border: none;
@@ -274,6 +274,30 @@ header .nav-link.active::after {
   }
 }
 /* END HEADER */
+
+/* START WHO ARE WE */
+.style-img-profile::before,
+.style-img-profile::after {
+  content: "";
+  position: absolute;
+  width: 135px;
+  border-width: 75px;
+  border-style: solid;
+  z-index: 1;
+}
+
+.style-img-profile::before {
+  border-color: var(--red-color) var(--red-color) transparent transparent;
+  top: -24px;
+  right: -15px;
+}
+
+.style-img-profile::after {
+  border-color: transparent transparent var(--red-color) var(--red-color);
+  bottom: -24px;
+  left: -15px;
+}
+/* END WHO ARE WE */
 
 /* START PAGINATION */
 .pagination .page-link {

@@ -5,7 +5,7 @@ const SubTitle = ({ title, more = true, color, text = "black" }) => {
     <div className="d-flex justify-content-between align-items-center">
       <div className="d-flex justify-content-center align-items-center gap-3">
         <span className="line" style={{ backgroundColor: color }}></span>
-        <h5 className={"text-" + text}>{title}</h5>
+        <h5 className={"fw-bold text-" + text}>{title}</h5>
       </div>
 
       {more && (
