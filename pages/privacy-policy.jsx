@@ -1,4 +1,4 @@
-import Condition from "@/components/Conditions/condition";
+import Condition from "@/components/Conditions/Condition";
 import SubTitle from "@/components/Utilities/SubTitle";
 
 const privacyPolicy = () => {
