@@ -177,6 +177,9 @@ input, textarea {
   html {
     font-size: 14px;
   }
+  img, video {
+    height: auto;
+  }
 }
 /* END GLOBAL */
 
@@ -215,7 +218,6 @@ input, textarea {
 .swiper-slide:nth-child(3n) {
   width: 20%;
 }
-
 /* END SWIPER */
 
 /* START HEADER */
