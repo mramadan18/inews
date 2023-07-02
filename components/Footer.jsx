@@ -95,24 +95,24 @@ const Footer = () => {
           <div className="col-md-6 col-lg-3 d-flex flex-column justify-content-start align-items-start gap-3 px-5 my-3 mb-md-0">
             <h5 className="fw-bold mb-3 d-flex">عنا</h5>
             <div className="d-flex flex-row flex-md-row flex-wrap justify-content-start align-items-start gap-3">
-              <Link href="/">من نحن</Link>
-              <Link href="/">الأحكام والشروط</Link>
-              <Link href="/">سياسة الخصوصية</Link>
-              <Link href="/">تواصل معنا</Link>
+              <Link href="/who-are-we">من نحن</Link>
+              <Link href="/terms-and-conditions">الأحكام والشروط</Link>
+              <Link href="/privacy-policy">سياسة الخصوصية</Link>
+              <Link href="/contact-us">تواصل معنا</Link>
             </div>
           </div>
           <div className="col-md-6 col-lg-3 d-flex flex-column justify-content-start align-items-start gap-3 px-5 mb-5 mt-3 mt-lg-0">
             <h5 className="fw-bold mb-3">الأقسام</h5>
             <div className="d-flex justify-content-start align-items-center gap-4">
               <div className="d-flex flex-column justify-content-center align-items-start gap-3">
-                <Link href="/">أقتصاد</Link>
-                <Link href="/">سياسة</Link>
-                <Link href="/">رياضة</Link>
+                <Link href="/policy">أقتصاد</Link>
+                <Link href="/policy">سياسة</Link>
+                <Link href="/policy">رياضة</Link>
               </div>
               <div className="d-flex flex-column justify-content-center align-items-start gap-3">
-                <Link href="/">أمني</Link>
-                <Link href="/">محلي</Link>
-                <Link href="/">أخبار دولية وأقليمية</Link>
+                <Link href="/policy">أمني</Link>
+                <Link href="/policy">محلي</Link>
+                <Link href="/policy">أخبار دولية وأقليمية</Link>
               </div>
             </div>
           </div>

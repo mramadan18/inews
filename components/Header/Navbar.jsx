@@ -52,22 +52,22 @@ const Navbar = ({ handleShowSearchBar }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" aria-current="page" href="/">
+              <Link className="nav-link" aria-current="page" href="/policy">
                 أمني
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" aria-current="page" href="/">
+              <Link className="nav-link" aria-current="page" href="/policy">
                 محلي
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" aria-current="page" href="/">
+              <Link className="nav-link" aria-current="page" href="/policy">
                 أخبار دولية و أقليمية
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" aria-current="page" href="/">
+              <Link className="nav-link" aria-current="page" href="/policy">
                 اقتصاد
               </Link>
             </li>
@@ -83,57 +83,57 @@ const Navbar = ({ handleShowSearchBar }) => {
               </Link>
               <ul className="dropdown-menu text-end pt-0 rounded-0">
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     الصحة
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     الفن
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     علوم
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     تراث
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     الرياضة
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     تكنولوجيا
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     ريادة
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     ثقافة
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     منوعات
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/policy">
                     مقالات
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/">
+                  <Link className="dropdown-item" href="/our-program">
                     برامجنا
                   </Link>
                 </li>
@@ -153,12 +153,16 @@ const Navbar = ({ handleShowSearchBar }) => {
               onClick={handleShowSearchBar}
               style={{ cursor: "pointer" }}
             />
-            <Link href="/" className="link-live">
+            <Link href="/live" className="link-live">
               البث الحي
             </Link>
-            <button className="btn btn-danger px-4 mx-3" type="submit">
+            <Link
+              href="/breaking-news"
+              className="btn btn-danger px-4 mx-3"
+              type="submit"
+            >
               عاجل
-            </button>
+            </Link>
           </form>
         </div>
       </div>
