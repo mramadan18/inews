@@ -3,7 +3,7 @@ import Image from "next/image";
 const SocialMediaIcons = () => {
   return (
     <div
-      className="position-fixed d-none d-lg-block"
+      className="position-fixed d-none d-lg-block z-2"
       style={{
         top: "20%",
         left: "50px",

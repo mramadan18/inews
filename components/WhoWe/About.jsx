@@ -8,7 +8,9 @@ const About = () => {
           <Image src="/images/img_2.png" width={620} height={343} alt="..." />
         </div>
         <div className="col-lg-8">
-          <h5 className="fw-bold mb-4">حول قناة اي نيوز الفضائية</h5>
+          <h5 className="fw-bold mb-4 mt-5 mt-lg-0">
+            حول قناة اي نيوز الفضائية
+          </h5>
           <p className="line-height-35">
             لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل
             ليتصور طريقه النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او

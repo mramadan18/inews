@@ -76,7 +76,7 @@ const news = () => {
           </div>
 
           <div className="col-lg-4">
-            <div className="animate-section">
+            <div className="animate-section mt-3 mt-lg-0">
               <h5 className="health-title bg-blue-light py-3 text-white text-center mb-0">
                 اخر اخبار
               </h5>

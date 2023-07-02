@@ -9,7 +9,7 @@ const whoAreWe = () => {
         <About />
 
         <div className="row mt-5">
-          <div className="col-md-6">
+          <div className="col-lg-6">
             <div className="p-4 bg-white">
               <SubTitle title="الرؤية" color="#D30707" more={false} />
 
@@ -23,8 +23,8 @@ const whoAreWe = () => {
               </p>
             </div>
           </div>
-          <div className="col-md-6">
-            <div className="p-4 bg-white">
+          <div className="col-lg-6">
+            <div className="p-4 bg-white mt-4 mt-lg-0">
               <SubTitle title="الرسالة" color="#D30707" more={false} />
 
               <p className="mt-4 line-height-35">

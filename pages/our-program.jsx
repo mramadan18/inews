@@ -16,7 +16,7 @@ const ourPogram = () => {
 
             <div className="col-lg-5">
               <h6
-                className="text-danger fw-bold"
+                className="text-danger fw-bold mt-4 mt-lg-0"
                 style={{
                   fontSize: "14px",
                   letterSpacing: "2px",

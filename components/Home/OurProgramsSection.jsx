@@ -22,19 +22,19 @@ const OurProgramsSection = ({ bg, bgColor, img, title, color, text }) => {
         <SubTitle title={title} color={color} text={text} />
         <div className="mt-5">
           <div className="row">
-            <div className="col-lg-4 mb-3 mb-mb-lg-0">
+            <div className="col-md-6 col-lg-4 mb-3 mb-lg-0">
               <VideoNewsCard />
               <div className="py-3 text-center bg-white fs-5">
                 ضربة موجعة لسلاح الجو الروسي
               </div>
             </div>
-            <div className="col-lg-4 mb-3 mb-mb-lg-0">
+            <div className="col-md-6 col-lg-4 mb-3 mb-lg-0">
               <VideoNewsCard />
               <div className="py-3 text-center bg-white fs-5">
                 ضربة موجعة لسلاح الجو الروسي
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <VideoNewsCard />
               <div className="py-3 text-center bg-white fs-5">
                 ضربة موجعة لسلاح الجو الروسي

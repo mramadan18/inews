@@ -17,6 +17,7 @@ const LatestNews = ({ title, color, imgs }) => {
     <div className="mt-5">
       <SubTitle title={title} color={color} />
       <Swiper
+        dir="ltr"
         slidesPerView={widthScreen <= 700 ? 1.5 : 3}
         spaceBetween={15}
         autoplay={{

@@ -10,12 +10,10 @@ import HealthSection from "@/components/Home/HealthSection";
 import LocalSection from "@/components/Home/LocalSection";
 import OurProgramsSection from "@/components/Home/OurProgramsSection";
 import SocialMediaIcons from "@/components/Utilities/SocialMediaIcons";
-import Loading from "@/components/Utilities/Loading";
 
 export default function Home() {
   return (
     <>
-      <Loading />
       <SocialMediaIcons />
 
       <div className="container ">

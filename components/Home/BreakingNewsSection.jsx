@@ -26,7 +26,7 @@ const BreakingNewsSection = ({ img, urgent = false }) => {
               </button>
             )}
             <div className="overflow-hidden">
-              <Image src={img} width={620} height={343} alt="..." />
+              <Image src={img} width={720} height={343} alt="..." />
             </div>
             <span
               className="fs-6 mb-4 mt-3 position-absolute text-white z-2"
