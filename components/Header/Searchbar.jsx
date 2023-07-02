@@ -5,7 +5,7 @@ const Searchbar = () => {
     <div
       className="search-bar bg-gray position-absolute w-100 py-3 z-2 shadow-header d-none fade"
       id="searchbar"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="searchbar"
       aria-hidden="true"
     >

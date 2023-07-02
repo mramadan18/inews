@@ -10,10 +10,43 @@ import HealthSection from "@/components/Home/HealthSection";
 import LocalSection from "@/components/Home/LocalSection";
 import OurProgramsSection from "@/components/Home/OurProgramsSection";
 import SocialMediaIcons from "@/components/Utilities/SocialMediaIcons";
+import NotificationsModal from "@/components/Utilities/NotificationsModal";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showNotify, setShowNotify] = useState(true);
+
+  const handleNotifactionsOnSite = async () => {
+    if (!window.Notification) {
+      alert("This browser does not support desktop notification");
+    } else {
+      let permission = await Notification.requestPermission();
+      if (permission === "granted") {
+        setShowNotify(false);
+        let notify = new Notification("آي نيوز", {
+          body: "أنباء عن ضربة موجعة لسلاح الجو الروسي وزيلينسكي يطلب وساطة دولة أفريقية لإنهاء هذه الحرب ..  ",
+          icon: "/images/inews_logo.png",
+          dir: "rtl",
+          lang: "ar-eg",
+        });
+
+        notify.addEventListener("click", () => {
+          console.log("Greet!");
+        });
+      } else {
+        setShowNotify(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    handleNotifactionsOnSite();
+  }, []);
+
   return (
     <>
+      {showNotify && <NotificationsModal />}
+
       <SocialMediaIcons />
 
       <div className="container ">

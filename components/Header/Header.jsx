@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import BreakingNewsBar from "../Utilities/BreakingNewsBar";
 import Navbar from "./Navbar";
 import Upperbar from "./Upperbar";
