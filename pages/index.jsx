@@ -14,7 +14,7 @@ import NotificationsModal from "@/components/Utilities/NotificationsModal";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [showNotify, setShowNotify] = useState(true);
+  const [showNotify, setShowNotify] = useState(false);
 
   const handleNotifactionsOnSite = async () => {
     if (!window.Notification) {
