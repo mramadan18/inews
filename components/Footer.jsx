@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className="bg-white pt-5 pb-4 mb-lg-0 mt-5">
       <div className="container position-relative">
         <div className="row">
-          <div className="col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center gap-4">
+          <div className="col-lg-3 d-flex flex-column justify-content-center align-items-center gap-4">
             <Image
               src={"/images/inews_logo.png"}
               alt="iNEWS"
@@ -103,7 +103,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-lg-3 d-flex flex-column justify-content-start align-items-start gap-3 pe-5 my-3 mt-lg-0 mb-md-0">
+          <div className="col-lg-3 d-flex flex-column justify-content-start align-items-start gap-3 pe-5 my-5 my-lg-0">
             <h5 className="fw-bold mb-3 d-flex">عنا</h5>
             <div className="d-flex flex-row flex-md-column flex-wrap justify-content-start align-items-start gap-3">
               <Link href="/who-are-we">من نحن</Link>
@@ -112,7 +112,7 @@ const Footer = () => {
               <Link href="/contact-us">تواصل معنا</Link>
             </div>
           </div>
-          <div className="col-md-6 col-lg-3 d-flex flex-column justify-content-start align-items-start gap-3 mb-5 mt-3 mt-lg-0">
+          <div className="col-lg-3 d-flex flex-column justify-content-start align-items-start gap-3 pe-5 pe-lg-0">
             <h5 className="fw-bold mb-3">الأقسام</h5>
             <div className="d-flex justify-content-start align-items-center gap-4">
               <div className="d-flex flex-column justify-content-center align-items-start gap-3">
@@ -127,7 +127,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-lg-3 d-flex flex-column justify-content-start align-items-start gap-4 mt-3 mt-lg-0 ps-0">
+          <div className="col-lg-3 d-flex flex-column justify-content-start align-items-start gap-4 my-5 my-lg-0 px-5 px-lg-0">
             <h5 className="fw-bold mb-3">اشترك بالنشرة البريدية</h5>
             <input
               className="w-100"

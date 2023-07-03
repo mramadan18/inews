@@ -67,7 +67,7 @@ export default function Home() {
         bg="/images/bg_1.png"
         bgColor="rgba(111, 100, 2, 0.70)"
         img="/images/img_9.png"
-        title="الغن"
+        title="الرياضة"
         color="#FFD930"
         text="white"
       />
