@@ -7,7 +7,7 @@ const Navbar = ({ handleShowSearchBar }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-white">
       <div className="container">
-        <Link className="navbar-brand" href="/">
+        <Link className="navbar-brand me-0" href="/">
           <Image
             src="/images/inews_logo.png"
             alt="iNEWS"
@@ -158,8 +158,7 @@ const Navbar = ({ handleShowSearchBar }) => {
             </Link>
             <Link
               href="/breaking-news"
-              className="btn btn-danger px-4 mx-3"
-              type="submit"
+              className="btn btn-danger rounded-0 px-4 me-3"
             >
               عاجل
             </Link>

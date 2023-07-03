@@ -10,36 +10,26 @@ const HealthSection = ({ title, color, img, urgent, imgs }) => {
 
       <div className="row mt-5 overflow-hidden">
         <div className="col-lg-8">
-          <div className="position-relative">
-            <div
-              className="position-absolute w-100 h-100 d-flex justify-content-center align-items-center overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.85) 100%)",
-              }}
-            ></div>
-            {urgent && (
-              <button
-                className="btn btn-danger position-absolute rounded-0 px-3"
+          <div className="p-3 bg-white">
+            <div className="position-relative">
+              <div
+                className="position-absolute w-100 h-100 d-flex justify-content-center align-items-center overflow-hidden"
                 style={{
-                  top: "10px",
-                  right: "20px",
-                  fontSize: "13px",
+                  background:
+                    "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.85) 100%)",
+                }}
+              ></div>
+              <Image src={img} width={855} height={328} alt="..." />
+              <h6
+                className="fs-6 mb-4 mt-3 position-absolute text-white"
+                style={{
+                  left: "40%",
+                  bottom: "10px",
                 }}
               >
-                عاجل
-              </button>
-            )}
-            <Image src={img} width={855} height={328} alt="..." />
-            <h6
-              className="fs-6 mb-4 mt-3 position-absolute text-white"
-              style={{
-                left: "40%",
-                bottom: "10px",
-              }}
-            >
-              حرب روسيا و أوكرانيا
-            </h6>
+                حرب روسيا و أوكرانيا
+              </h6>
+            </div>
           </div>
 
           <div className="row mt-4">
@@ -57,7 +47,7 @@ const HealthSection = ({ title, color, img, urgent, imgs }) => {
           <div className="details-news py-3 px-3 bg-white">
             <p
               className="mb-4 text-black"
-              style={{ paddingLeft: "2rem", lineHeight: "28px" }}
+              style={{ paddingLeft: "2rem", lineHeight: "26px" }}
             >
               يقولون دائما إن الوقاية خير من العلاج، ومن هنا فإن الحفاظ على
               البشرة وحمايتها من أشعة الشمس الحارقة يساعد على سلامة الجلد والبعد
@@ -65,7 +55,7 @@ const HealthSection = ({ title, color, img, urgent, imgs }) => {
             </p>
             <p
               className="mb-4 text-black"
-              style={{ paddingLeft: "2rem", lineHeight: "27px" }}
+              style={{ paddingLeft: "2rem", lineHeight: "26px" }}
             >
               ومن ناحية أخرى، ينبغي علينا أن نتابع ونلاحظ التغيرات التي تطرأ على
               الجلد، من بثور وبقع، خاصة تلك التي تكون بلون أحمر مائل إلى البني،

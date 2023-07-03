@@ -8,7 +8,7 @@ const NewsCard = ({ img }) => {
         <Image src={img} width={500} height={280} alt="" />
       </div>
       <Link
-        className="mt-4 text-black d-block line-height-35"
+        className="mt-4 text-black d-block line-height-35 fw-bold"
         style={{
           textDecoration: "none",
         }}
@@ -16,7 +16,7 @@ const NewsCard = ({ img }) => {
       >
         أنباء عن ضربة موجعة لسلاح الجو الروسي وزيلينسكي يطلب وساطة دولة أفريقية
         لإنهاء هذه الحرب ..
-        <span className="text-danger">أقرأ المزيد</span>
+        <span className="text-danger fw-normal">أقرأ المزيد</span>
       </Link>
     </div>
   );

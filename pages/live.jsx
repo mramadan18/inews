@@ -1,4 +1,4 @@
-import NewsCard from "@/components/Home/NewsCard";
+import VideoNewsCard from "@/components/Home/VideoNewsCard";
 import Table from "@/components/Live/Table";
 import SubTitle from "@/components/Utilities/SubTitle";
 import TitlePage from "@/components/Utilities/TitlePage";
@@ -37,23 +37,23 @@ const live = () => {
         <SubTitle title="المزيد من الغيديوهات" color="#D30707" more={false} />
 
         <div className="row mt-4">
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_11.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_11.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_12.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_12.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_13.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_13.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_12.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_12.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_13.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_13.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_11.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_11.png"} />
           </div>
         </div>
 

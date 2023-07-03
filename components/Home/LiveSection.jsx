@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SubTitle from "../Utilities/SubTitle";
 import VideoLiveCard from "./VideoLiveCard";
 
@@ -10,7 +11,7 @@ const LiveSection = () => {
           <VideoLiveCard />
         </div>
         <div className="col-lg-5">
-          <VideoLiveCard />
+          <Image src="/images/img_2.png" width={750} height={424} alt="..." />
         </div>
       </div>
     </div>

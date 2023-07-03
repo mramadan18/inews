@@ -20,12 +20,12 @@ const LatestNews = ({ title, color, imgs }) => {
         dir="ltr"
         slidesPerView={widthScreen <= 700 ? 1.5 : 3}
         spaceBetween={15}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
         modules={[Autoplay, FreeMode]}
-        className="mySwiper mt-4"
+        className="mySwiper mt-4 pb-4"
       >
         {imgs?.map((img, index) => (
           <SwiperSlide key={index}>

@@ -56,6 +56,11 @@ input, textarea {
   background-color: var(--light-blue-color);
 }
 
+
+.btn-primary:hover {
+  background-color: var(--dark-blue-color);
+}
+
 .btn-gray {
   background-color: #536488;
   color: #fff;
@@ -113,17 +118,17 @@ input, textarea {
   border-right: 4px solid var(--red-color);
 }
 
-.animate-scale {
+/* .animate-scale {
   transition: all 0.3s ease-in-out
-}
+} */
 
 .animate-scale:hover {
   transform: scale(1.3);
 }
 
-.animate-section {
+/* .animate-section {
   transition: all 1s ease-in-out;
-}
+} */
 
 .animate-section:hover {
   box-shadow: 0px 10px 22px 4px rgba(148, 148, 148, 0.14);
@@ -185,6 +190,12 @@ input, textarea {
     height: auto !important;
   }
 }
+
+@media (min-width: 1399px) and (max-width: 1600px) {
+  .container {
+    width: 1120px !important;
+  }
+}
 /* END GLOBAL */
 
 /* START SWIPER */
@@ -222,6 +233,26 @@ input, textarea {
 .swiper-slide:nth-child(3n) {
   width: 20%;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px;
+  height: 32px;
+  background-color: var(--black-color);
+  padding: 1rem 1.2rem;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px !important;
+  font-weight: bold;
+  color: white;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 1 !important;
+}
 /* END SWIPER */
 
 /* START HEADER */
@@ -245,6 +276,28 @@ header .link-live {
   font-weight: 700;
   position: relative;
   text-decoration: underline;
+  animation: text-flash 1s ease-in-out 3s infinite;
+}
+
+@keyframes text-flash {
+  0% {
+    color: var(--red-color);
+  }
+  100% {
+    color: #C10000;
+  }
+}
+
+@keyframes bg-flash {
+  0% {
+    background-color: var(--red-color);
+  }
+  50% {
+    background-color: #C10000;
+  }
+  100% {
+    background-color: var(--red-color);
+  }
 }
 
 header .link-live::before {
@@ -256,6 +309,17 @@ header .link-live::before {
   top: 15%;
   right: -24px;
   border-radius: 50%;
+  animation: bg-flash 1s ease-in-out 3s infinite;
+}
+
+header .nav-link {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  font-size: 1rem;
+}
+
+header .dropdown-item {
+  font-size: 1.2rem !important;
 }
 
 header .nav-link.active {
@@ -273,8 +337,8 @@ header .nav-link.active::after {
   left: 5px;
 }
 
-.alert-bar:hover {
-  background-color: #C10000;
+.alert-bar {
+  animation: bg-flash 1s linear infinite;
 }
 
 @media (max-width: 576px) {

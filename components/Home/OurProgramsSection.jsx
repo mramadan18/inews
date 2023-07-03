@@ -24,21 +24,12 @@ const OurProgramsSection = ({ bg, bgColor, img, title, color, text }) => {
           <div className="row">
             <div className="col-md-6 col-lg-4 mb-3 mb-lg-0">
               <VideoNewsCard />
-              <div className="py-3 text-center bg-white fs-5">
-                ضربة موجعة لسلاح الجو الروسي
-              </div>
             </div>
             <div className="col-md-6 col-lg-4 mb-3 mb-lg-0">
               <VideoNewsCard />
-              <div className="py-3 text-center bg-white fs-5">
-                ضربة موجعة لسلاح الجو الروسي
-              </div>
             </div>
             <div className="col-md-6 col-lg-4">
               <VideoNewsCard />
-              <div className="py-3 text-center bg-white fs-5">
-                ضربة موجعة لسلاح الجو الروسي
-              </div>
             </div>
           </div>
         </div>

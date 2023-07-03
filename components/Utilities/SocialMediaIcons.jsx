@@ -5,8 +5,8 @@ const SocialMediaIcons = () => {
     <div
       className="position-fixed d-none d-lg-block z-2"
       style={{
-        top: "20%",
-        left: "50px",
+        top: "17%",
+        left: "40px",
       }}
     >
       <div className="d-flex flex-column justify-content-center align-items-center gap-3">
