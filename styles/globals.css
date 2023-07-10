@@ -240,6 +240,8 @@ input, textarea {
   height: 32px;
   background-color: var(--black-color);
   padding: 1rem 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .swiper-button-prev::after,
@@ -338,6 +340,7 @@ header .nav-link.active::after {
 }
 
 .alert-bar {
+  font-size: 1.85rem;
   animation: bg-flash 1s linear infinite;
 }
 

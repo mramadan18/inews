@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const VideoNewsCard = () => {
   return (
-    <div>
+    <>
       <div className="position-relative">
         <div className="position-absolute w-100 h-100 bg-black bg-opacity-50 d-flex justify-content-center align-items-center overflow-hidden">
           <Image
@@ -39,7 +39,7 @@ const VideoNewsCard = () => {
       <div className="py-3 text-center bg-white fs-5">
         ضربة موجعة لسلاح الجو الروسي
       </div>
-    </div>
+    </>
   );
 };
 

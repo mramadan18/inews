@@ -7,19 +7,15 @@ const BreakingNewsBar = () => {
       role="alert"
     >
       <div className="container d-flex justify-content-between align-items-center">
-        <p className="fs-5">
-          عاجل : نزاعات العشائر في العراق.. ميراث قديم يتغذى على الفوضى
-        </p>
-        <button className="btn">
-          <Image
-            src="/images/icons/close_icon.svg"
-            width={30}
-            height={30}
-            alt="close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-          />
-        </button>
+        <p>عاجل : نزاعات العشائر في العراق.. ميراث قديم يتغذى على الفوضى</p>
+        <Image
+          src="/images/icons/close_icon.svg"
+          width={30}
+          height={30}
+          alt="close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        />
       </div>
     </div>
   );

@@ -23,7 +23,14 @@ const ourPogram = () => {
         <div className="border-top p-4 bg-white">
           <div className="row">
             <div className="col-lg-7">
-              <Image src="/images/img_30.png" width={680} height={370} alt="" />
+              <video
+                style={{
+                  width: "100%",
+                  height: "360px",
+                }}
+                src="/videos/video.mp4"
+                controls
+              ></video>
             </div>
 
             <div className="col-lg-5">
