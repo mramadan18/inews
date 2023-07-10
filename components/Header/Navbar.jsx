@@ -81,7 +81,7 @@ const Navbar = ({ handleShowSearchBar }) => {
               >
                 المزيد
               </Link>
-              <ul className="dropdown-menu text-end pt-0 rounded-0">
+              <ul className="dropdown-menu text-end py-0 rounded-0">
                 <li>
                   <Link className="dropdown-item" href="/policy">
                     الصحة
