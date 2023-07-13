@@ -12,6 +12,7 @@ import OurProgramsSection from "@/components/Home/OurProgramsSection";
 import SocialMediaIcons from "@/components/Utilities/SocialMediaIcons";
 import NotificationsModal from "@/components/Utilities/NotificationsModal";
 import { useEffect, useState } from "react";
+import Loading from "@/components/Utilities/Loading";
 
 export default function Home() {
   const [showNotify, setShowNotify] = useState(false);
@@ -48,6 +49,8 @@ export default function Home() {
       {showNotify && <NotificationsModal />}
 
       <SocialMediaIcons />
+
+      {/* <Loading /> */}
 
       <div className="container ">
         <BreakingNewsSection img="/images/img_1.png" urgent={true} />

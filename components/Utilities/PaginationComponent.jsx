@@ -17,8 +17,8 @@ const PaginationComponent = () => {
         />
       }
       onPageChange={handlePageClick}
-      marginPagesDisplayed={3}
-      pageRangeDisplayed={1}
+      marginPagesDisplayed={1}
+      pageRangeDisplayed={2}
       pageCount={12}
       previousLabel={
         <Image
