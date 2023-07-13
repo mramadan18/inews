@@ -3,7 +3,7 @@ import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import { useEffect, useState } from "react";
 
-const privacyPolicy = () => {
+const PrivacyPolicy = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -62,4 +62,4 @@ const privacyPolicy = () => {
   );
 };
 
-export default privacyPolicy;
+export default PrivacyPolicy;

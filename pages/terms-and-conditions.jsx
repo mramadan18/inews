@@ -3,7 +3,7 @@ import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import { useEffect, useState } from "react";
 
-const termsAndConditions = () => {
+const TermsAndConditions = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -63,4 +63,4 @@ const termsAndConditions = () => {
   );
 };
 
-export default termsAndConditions;
+export default TermsAndConditions;

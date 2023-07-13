@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const news = () => {
+const News = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -180,4 +180,4 @@ const news = () => {
   );
 };
 
-export default news;
+export default News;

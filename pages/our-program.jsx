@@ -15,7 +15,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loading from "@/components/Utilities/Loading";
 
-const ourPogram = () => {
+const OurPogram = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -245,4 +245,4 @@ const ourPogram = () => {
   );
 };
 
-export default ourPogram;
+export default OurPogram;

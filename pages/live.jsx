@@ -5,7 +5,7 @@ import SubTitle from "@/components/Utilities/SubTitle";
 import TitlePage from "@/components/Utilities/TitlePage";
 import { useEffect, useState } from "react";
 
-const live = () => {
+const Live = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -90,4 +90,4 @@ const live = () => {
   );
 };
 
-export default live;
+export default Live;

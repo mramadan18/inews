@@ -4,7 +4,7 @@ import About from "@/components/WhoWe/About";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const whoAreWe = () => {
+const WhoAreWe = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -92,4 +92,4 @@ const whoAreWe = () => {
   );
 };
 
-export default whoAreWe;
+export default WhoAreWe;

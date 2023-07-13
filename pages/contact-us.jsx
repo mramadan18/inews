@@ -3,7 +3,7 @@ import SubTitle from "@/components/Utilities/SubTitle";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const contactUs = () => {
+const ContactUs = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -119,4 +119,4 @@ const contactUs = () => {
   );
 };
 
-export default contactUs;
+export default ContactUs;

@@ -5,7 +5,7 @@ import TitlePage from "@/components/Utilities/TitlePage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const episodeOfTheProgramme = () => {
+const EpisodeOfTheProgramme = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -100,4 +100,4 @@ const episodeOfTheProgramme = () => {
   );
 };
 
-export default episodeOfTheProgramme;
+export default EpisodeOfTheProgramme;

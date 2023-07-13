@@ -6,7 +6,7 @@ import NewsCard from "@/components/Home/NewsCard";
 import PaginationComponent from "@/components/Utilities/PaginationComponent";
 import Loading from "@/components/Utilities/Loading";
 
-const policy = () => {
+const Policy = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -63,4 +63,4 @@ const policy = () => {
   );
 };
 
-export default policy;
+export default Policy;

@@ -3,7 +3,7 @@ import Loading from "@/components/Utilities/Loading";
 import TitlePage from "@/components/Utilities/TitlePage";
 import { useEffect, useState } from "react";
 
-const breakingNews = () => {
+const BreakingNews = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -34,4 +34,4 @@ const breakingNews = () => {
   );
 };
 
-export default breakingNews;
+export default BreakingNews;
