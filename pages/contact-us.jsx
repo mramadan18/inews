@@ -1,7 +1,17 @@
+import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const contactUs = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main>
       <div className="container">

@@ -1,8 +1,18 @@
+import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import About from "@/components/WhoWe/About";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const whoAreWe = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main>
       <div className="container">

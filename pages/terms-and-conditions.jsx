@@ -1,8 +1,17 @@
 import Condition from "@/components/Conditions/Condition";
+import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
-import React from "react";
+import { useEffect, useState } from "react";
 
 const termsAndConditions = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main>
       <div className="container">

@@ -1,10 +1,21 @@
+import { useEffect, useState } from "react";
 import TitlePage from "@/components/Utilities/TitlePage";
 import BreakingNewsSection from "@/components/Home/BreakingNewsSection";
 import SubTitle from "@/components/Utilities/SubTitle";
 import NewsCard from "@/components/Home/NewsCard";
 import PaginationComponent from "@/components/Utilities/PaginationComponent";
+import Loading from "@/components/Utilities/Loading";
 
 const policy = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="container">
       <TitlePage title="سياسة" />

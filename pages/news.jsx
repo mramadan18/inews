@@ -1,10 +1,20 @@
 import HealthSection from "@/components/Home/HealthSection";
 import NewsCard from "@/components/Home/NewsCard";
+import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const news = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main>
       <div className="container">

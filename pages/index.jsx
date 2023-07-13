@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import Loading from "@/components/Utilities/Loading";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [showNotify, setShowNotify] = useState(false);
 
   const handleNotifactionsOnSite = async () => {
@@ -42,15 +43,18 @@ export default function Home() {
 
   useEffect(() => {
     // handleNotifactionsOnSite();
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
       {showNotify && <NotificationsModal />}
 
       <SocialMediaIcons />
-
-      {/* <Loading /> */}
 
       <div className="container ">
         <BreakingNewsSection img="/images/img_1.png" urgent={true} />

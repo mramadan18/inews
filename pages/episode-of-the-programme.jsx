@@ -1,9 +1,19 @@
 import VideoNewsCard from "@/components/Home/VideoNewsCard";
+import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import TitlePage from "@/components/Utilities/TitlePage";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const episodeOfTheProgramme = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main>
       <div className="container">

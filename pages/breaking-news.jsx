@@ -1,7 +1,17 @@
 import Breaking from "@/components/Breaking/Breaking";
+import Loading from "@/components/Utilities/Loading";
 import TitlePage from "@/components/Utilities/TitlePage";
+import { useEffect, useState } from "react";
 
 const breakingNews = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main>
       <div className="container">
