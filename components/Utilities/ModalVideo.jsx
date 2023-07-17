@@ -9,8 +9,8 @@ const ModalVideo = () => {
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div className="modal-dialog p-0">
-        <div className="modal-content p-0">
+      <div className="modal-dialog p-0 mt-5 mt-md-4 mx-auto">
+        <div className="modal-content w-100 h-100 p-0">
           <button
             style={{
               top: "-20px",
@@ -23,12 +23,18 @@ const ModalVideo = () => {
           >
             <Image
               src="/images/icons/close_icon.svg"
-              width={18}
-              height={18}
+              width={30}
+              height={30}
               alt="close"
             />
           </button>
-          <video src="videos/video.mp4"></video>
+          <iframe
+            style={{
+              height: "100%",
+            }}
+            src="http://player.l1vetv.com/inewstv/"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </div>

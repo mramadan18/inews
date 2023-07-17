@@ -40,6 +40,49 @@ img, video {
   max-height: 100%;
 }
 
+iframe {
+  width: 100%;
+  height: 709px;
+  padding: 0;
+  background: transparent;
+}
+
+@media (max-width: 1600px) {
+  iframe {
+    height: 609px;
+  }
+}
+
+@media (max-width: 1200px) {
+  iframe {
+    height: 510px;
+  }
+}
+
+@media (max-width: 992px) {
+  iframe {
+    height: 375px;
+  }
+}
+
+@media (max-width: 767px) {
+  iframe {
+    height: 275px;
+  }
+}
+
+@media (max-width: 480px) {
+  iframe {
+    height: 235px;
+  }
+}
+
+@media (max-width: 350px) {
+  iframe {
+    height: 160px;
+  }
+}
+
 input, textarea {
   background-color: var(--bg-gray);
   color: var(--gray-color);
@@ -70,6 +113,7 @@ input, textarea {
   box-shadow: 0px 10px 22px 4px rgba(148, 148, 148, 0.14);
 }
 
+
 .text-danger {
   color: var(--red-color) !important;
 }
@@ -98,6 +142,16 @@ input, textarea {
   background-color: var(--bg-gray);
 }
 
+.modal-dialog {
+  max-width: 80%;
+  height: 94vh;
+}
+
+.modal-content {
+  height: 100%;
+  background-color: transparent;
+}
+
 .line-height-35 {
   line-height: 35px;
 }
@@ -118,17 +172,9 @@ input, textarea {
   border-right: 4px solid var(--red-color);
 }
 
-/* .animate-scale {
-  transition: all 0.3s ease-in-out
-} */
-
 .animate-scale:hover {
   transform: scale(1.3);
 }
-
-/* .animate-section {
-  transition: all 1s ease-in-out;
-} */
 
 .animate-section:hover {
   box-shadow: 0px 10px 22px 4px rgba(148, 148, 148, 0.14);

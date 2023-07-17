@@ -20,18 +20,10 @@ const Live = () => {
         <TitlePage title="البث الحي" />
 
         <div className="p-4 pt-1 bg-white">
-          <div className="row">
-            <div className="col-lg-12">
-              <video
-                style={{
-                  width: "100%",
-                  height: "430px",
-                }}
-                src="/videos/video.mp4"
-                controls
-              ></video>
-            </div>
-          </div>
+          <iframe
+            src="http://player.l1vetv.com/inewstv/"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div className="my-5">
