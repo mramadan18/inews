@@ -32,7 +32,7 @@ const ModalVideo = () => {
             style={{
               height: "100%",
             }}
-            src="http://player.l1vetv.com/inewstv/"
+            src="https://player.l1vetv.com/inewstv/"
             allowFullScreen
           ></iframe>
         </div>

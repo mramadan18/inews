@@ -21,7 +21,7 @@ const Live = () => {
 
         <div className="p-4 pt-1 bg-white">
           <iframe
-            src="http://player.l1vetv.com/inewstv/"
+            src="https://player.l1vetv.com/inewstv/"
             allowFullScreen
           ></iframe>
         </div>
