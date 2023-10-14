@@ -10,7 +10,7 @@ const Navbar = ({ handleShowSearchBar }) => {
 
   const fetchLinks = async () => {
     const { data } = await baseUrl.get(
-      "https://vps97897.serveur-vps.net/category/"
+      "http://vps97897.serveur-vps.net/category/"
     );
     setCategories(data?.results);
     return data;
