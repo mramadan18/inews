@@ -1,26 +1,31 @@
+import { useEffect } from "react";
 import SubTitle from "../Utilities/SubTitle";
 import BreakingNews from "./BreakingNewsSection";
 
-const SportsNews = ({ bg, bgColor, img, title, color, text }) => {
+const SportsNews = ({ data, text }) => {
   return (
     <section
       className="position-relative mt-5"
       style={{
-        backgroundImage: `url("${bg}")`,
+        backgroundImage: `url("${data?.results[0]?.category?.image}")`,
         backgroundSize: "cover",
       }}
     >
       <div
-        className="position-absolute z-0 w-100 h-100 d-flex justify-content-center align-items-center overflow-hidden"
+        className="position-absolute z-0 w-100 h-100 d-flex justify-content-center align-items-center overflow-hidden opacity-25"
         style={{
-          backgroundColor: bgColor,
+          backgroundColor: data?.results[0]?.category?.color,
         }}
       ></div>
 
       <div className="py-5 container position-relative">
-        <SubTitle title={title} color={color} text={text} />
+        <SubTitle
+          title={data?.results[0]?.category?.name}
+          color={data?.results[0]?.category?.color}
+          text={text}
+        />
         <div className="mt-5">
-          <BreakingNews img={img} />
+          <BreakingNews data={data?.results[0]} />
         </div>
       </div>
     </section>

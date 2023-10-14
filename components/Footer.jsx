@@ -1,9 +1,27 @@
+/* eslint-disable @next/next/no-img-element */
+import baseUrl from "@/baseUrl";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
   const [isSubscribe, setIsSubscribe] = useState(false);
+  const [social, setSocial] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  const getSocialMedia = async () => {
+    const { data } = await baseUrl.get(
+      "http://vps97897.serveur-vps.net/settings/links/"
+    );
+    setSocial(data.results);
+  };
+
+  const fetchLinks = async () => {
+    const { data } = await baseUrl.get(
+      "http://vps97897.serveur-vps.net/category/"
+    );
+    setCategories(data?.results);
+  };
 
   const handleSubscribe = () => {
     setIsSubscribe(true);
@@ -12,6 +30,11 @@ const Footer = () => {
       setIsSubscribe(false);
     }, 10000);
   };
+
+  useEffect(() => {
+    getSocialMedia();
+    fetchLinks();
+  }, []);
 
   return (
     <footer className="bg-white pt-5 pb-4 mb-lg-0 mt-5">
@@ -35,18 +58,27 @@ const Footer = () => {
             </p>
 
             <div className="d-flex justify-content-center align-items-center gap-3">
-              <div
-                className="d-flex justify-content-center align-items-center rounded-circle border border-2 border-dark"
-                style={{ width: "35px", height: "35px" }}
-              >
-                <Image
-                  src={"/images/icons/footer_facebook.svg"}
-                  alt="facebook"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <div
+              {social?.map((item) => {
+                return (
+                  <>
+                    <a
+                      key={item.id}
+                      href={item.url}
+                      target="__blank"
+                      className="d-flex justify-content-center align-items-center rounded-circle border border-2 border-dark"
+                      style={{ width: "35px", height: "35px" }}
+                    >
+                      <img
+                        src={item.logo}
+                        alt={item.name_ar}
+                        width={24}
+                        height={24}
+                      />
+                    </a>
+                  </>
+                );
+              })}
+              {/* <div
                 className="d-flex justify-content-center align-items-center rounded-circle border border-2 border-dark"
                 style={{ width: "35px", height: "35px" }}
               >
@@ -100,7 +132,7 @@ const Footer = () => {
                   width={24}
                   height={24}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-lg-3 d-flex flex-column justify-content-start align-items-start gap-3 pe-5 my-5 my-lg-0">
@@ -116,14 +148,18 @@ const Footer = () => {
             <h5 className="fw-bold mb-3">الأقسام</h5>
             <div className="d-flex justify-content-start align-items-center gap-4">
               <div className="d-flex flex-column justify-content-center align-items-start gap-3">
-                <Link href="/policy">أقتصاد</Link>
-                <Link href="/policy">سياسة</Link>
-                <Link href="/policy">رياضة</Link>
+                {categories?.slice(0, 3)?.map((category) => (
+                  <Link key={category.id} href={`/categories/${category.id}`}>
+                    {category.name}
+                  </Link>
+                ))}
               </div>
               <div className="d-flex flex-column justify-content-center align-items-start gap-3">
-                <Link href="/policy">أمني</Link>
-                <Link href="/policy">محلي</Link>
-                <Link href="/policy">أخبار دولية وأقليمية</Link>
+                {categories?.slice(3, 6)?.map((category) => (
+                  <Link key={category.id} href={`/categories/${category.id}`}>
+                    {category.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

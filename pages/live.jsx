@@ -1,19 +1,9 @@
 import VideoNewsCard from "@/components/Home/VideoNewsCard";
 import Table from "@/components/Live/Table";
-import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import TitlePage from "@/components/Utilities/TitlePage";
-import { useEffect, useState } from "react";
 
 const Live = () => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
   return (
     <main>
       <div className="container">

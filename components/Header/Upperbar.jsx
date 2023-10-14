@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import baseUrl from "@/baseUrl";
 
 const Upperbar = () => {
   const [lang, setLang] = useState("ar");
+  const [data, setData] = useState([]);
 
   const handleLang = (lang) => {
     const htmlTag = document.querySelector("html");
@@ -12,15 +14,24 @@ const Upperbar = () => {
     htmlTag.setAttribute("lang", lang);
   };
 
+  const getData = async () => {
+    const { data } = await baseUrl.get(
+      "http://vps97897.serveur-vps.net/settings/"
+    );
+    setData(data?.results[0]);
+    return data;
+  };
+
   useEffect(() => {
     handleLang(lang);
+    getData();
   }, [lang]);
 
   return (
     <div className="upper d-flex align-items-center">
       <div className="container d-flex justify-content-around justify-content-md-between align-items-center gap-5 text-white fs-5">
         <div className="d-flex justify-content-center align-items-center gap-4">
-          <p>قناة اي نيوز الفضائية</p>
+          <p>{data?.name_main_header_ar}</p>
           {lang === "ar" ? (
             <a
               className="d-flex justify-content-center align-items-center gap-1 text-white fs-6"
@@ -55,7 +66,7 @@ const Upperbar = () => {
             </a>
           )}
         </div>
-        <p>نعلم لتعلم</p>
+        <p>{data?.our_sub_lable_ar}</p>
       </div>
     </div>
   );

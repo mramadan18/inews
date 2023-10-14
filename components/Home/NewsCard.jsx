@@ -1,22 +1,33 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
-const NewsCard = ({ img }) => {
+const NewsCard = ({ data }) => {
   return (
     <div className="p-3 bg-white mb-3 mb-lg-0 text-end fs-6 animate-section">
-      <div className="overflow-hidden">
-        <Image src={img} width={500} height={280} alt="" />
+      <div className="overflow-hidden" style={{ height: "200px" }}>
+        <img
+          className="w-100 h-100"
+          src={data?.thumbnail}
+          alt={data?.title_ar}
+          loading="lazy"
+        />
       </div>
       <Link
         className="mt-4 text-black d-block line-height-35 fw-bold"
         style={{
           textDecoration: "none",
         }}
-        href="/"
+        href={`/posts/${data?.id}`}
       >
-        أنباء عن ضربة موجعة لسلاح الجو الروسي وزيلينسكي يطلب وساطة دولة أفريقية
-        لإنهاء هذه الحرب ..
-        <span className="text-danger fw-normal">أقرأ المزيد</span>
+        <p
+          className="overflow-hidden"
+          style={{ height: "80px" }}
+          dangerouslySetInnerHTML={{
+            __html:
+              data?.title_ar +
+              '<span style="color: var(--red-color);"> أقرأ المزيد</span>',
+          }}
+        />
       </Link>
     </div>
   );

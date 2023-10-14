@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
+import Link from "next/link";
 
-const BreakingNewsSection = ({ img, urgent = false }) => {
+const BreakingNewsSection = ({ data, urgent = false }) => {
   return (
     <section className="border-top bg-white p-4 animate-section">
-      <div className="row">
+      <Link href={`/posts/${data?.id}`} className="row">
         <div className="col-lg-6">
           <div className="position-relative">
             <div
@@ -26,7 +28,12 @@ const BreakingNewsSection = ({ img, urgent = false }) => {
               </button>
             )}
             <div className="overflow-hidden">
-              <Image src={img} width={720} height={343} alt="..." />
+              <img
+                src={data?.thumbnail}
+                width={720}
+                height={343}
+                alt={data?.title}
+              />
             </div>
             <span
               className="fs-6 mb-4 mt-3 position-absolute text-white z-2"
@@ -41,21 +48,19 @@ const BreakingNewsSection = ({ img, urgent = false }) => {
         </div>
         <div className="col-lg-6">
           <h6 className="text-black mb-4 mt-3 fs-6">حرب روسيا و أوكرانيا</h6>
-          <h5 className="line-height-35 fw-bold mb-4">
-            أنباء عن ضربة موجعة لسلاح الجو الروسي وزيلينسكي يطلب وساطة دولة
-            أفريقية لإنهاء الحرب
-          </h5>
-          <p className="line-height-35">
-            كشفت مصادر صحفية روسية عن تعرض سلاح الجو الروسي لضربة موجعة قرب
-            الحدود الأوكرانية، في حين حث الرئيس الأوكراني فولوديمير زيلينسكي
-            دولة أفريقية على المساعدة في تنفيذ خطة كييف للسلام لإنهاء الحرب.
-          </p>
+          <h5 className="line-height-35 fw-bold mb-4">{data?.title_ar}</h5>
+          <p
+            className="line-height-35"
+            dangerouslySetInnerHTML={{
+              __html: `${data?.content_ar?.slice(0, 310)}.......` || "",
+            }}
+          />
 
           <div className="date mt-5 text-gray">
             16 مايو 2023 الساعة الرابعة مساءًا
           </div>
         </div>
-      </div>
+      </Link>
     </section>
   );
 };

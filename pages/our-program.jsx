@@ -12,18 +12,8 @@ import "swiper/css/navigation";
 import { FreeMode } from "swiper";
 import { Navigation } from "swiper";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import Loading from "@/components/Utilities/Loading";
 
 const OurPogram = () => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
   return (
     <main>
       <div className="container">

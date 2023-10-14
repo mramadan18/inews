@@ -1,17 +1,48 @@
+import baseUrl from "@/baseUrl";
 import Loading from "@/components/Utilities/Loading";
 import SubTitle from "@/components/Utilities/SubTitle";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const ContactUs = () => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  if (loading) {
-    return <Loading />;
-  }
+  const handlePostMessage = async (e) => {
+    e.preventDefault();
+    const formData = {
+      first_name,
+      last_name,
+      phone,
+      email,
+      message,
+    };
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      setIsLoading(true);
+      const { data } = await baseUrl.post("/contactus/", formData, config);
+      setIsLoading(false);
+      setFirst_name("");
+      setLast_name("");
+      setPhone("");
+      setEmail("");
+      setMessage("");
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <main>
       <div className="container">
@@ -19,20 +50,26 @@ const ContactUs = () => {
           <div className="col-lg-6">
             <SubTitle title="تواصل معنا" color="#D30707" more={false} />
 
-            <form>
+            <form onSubmit={handlePostMessage}>
               <div className="row mt-4">
                 <div className="col-6">
                   <input
                     className="w-100"
                     type="text"
+                    required
                     placeholder="الاسم الأول *"
+                    value={first_name}
+                    onChange={({ target }) => setFirst_name(target.value)}
                   />
                 </div>
                 <div className="col-6">
                   <input
                     className="w-100"
                     type="text"
+                    required
                     placeholder="الاسم الثاني *"
+                    value={last_name}
+                    onChange={({ target }) => setLast_name(target.value)}
                   />
                 </div>
               </div>
@@ -40,12 +77,22 @@ const ContactUs = () => {
                 <div className="col-6">
                   <input
                     className="w-100"
-                    type="text"
+                    type="tel"
+                    required
                     placeholder="رقم الجوال *"
+                    value={phone}
+                    onChange={({ target }) => setPhone(target.value)}
                   />
                 </div>
                 <div className="col-6">
-                  <input className="w-100" type="text" placeholder="الإيميل" />
+                  <input
+                    className="w-100"
+                    type="email"
+                    required
+                    placeholder="الإيميل *"
+                    value={email}
+                    onChange={({ target }) => setEmail(target.value)}
+                  />
                 </div>
               </div>
               <div className="row mt-3">
@@ -54,6 +101,9 @@ const ContactUs = () => {
                     className="w-100"
                     rows="6"
                     placeholder="الرسالة *"
+                    required
+                    value={message}
+                    onChange={({ target }) => setMessage(target.value)}
                   ></textarea>
                 </div>
               </div>
@@ -63,7 +113,7 @@ const ContactUs = () => {
                     type="submit"
                     className="btn btn-primary w-100 rounded-0"
                   >
-                    إرسال
+                    {isLoading ? <Loading /> : "إرسال"}
                   </button>
                 </div>
               </div>
