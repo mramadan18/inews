@@ -13,7 +13,6 @@ const Navbar = ({ handleShowSearchBar }) => {
       "http://vps97897.serveur-vps.net/category/"
     );
     setCategories(data?.results);
-    return data;
   };
 
   useEffect(() => {
