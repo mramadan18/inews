@@ -10,10 +10,14 @@ const Navbar = ({ handleShowSearchBar }) => {
   const [categories, setCategories] = useState([]);
 
   const fetchLinks = async () => {
-    const { data } = await baseUrl.get(
-      "http://vps97897.serveur-vps.net/category/"
-    );
-    setCategories(data?.results);
+    try {
+      const { data } = await baseUrl.get(
+        "http://vps97897.serveur-vps.net/category/"
+      );
+      setCategories(data?.results);
+    } catch (error) {
+      console.log(error);
+    }
     return data;
   };
 
