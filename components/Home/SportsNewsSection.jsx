@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import SubTitle from "../Utilities/SubTitle";
 import BreakingNews from "./BreakingNewsSection";
 
-const SportsNews = ({ data, text }) => {
+const SportsNews = ({ data, text, link }) => {
   return (
     <section
       className="position-relative mt-5"
@@ -23,6 +22,7 @@ const SportsNews = ({ data, text }) => {
           title={data?.results[0]?.category?.name}
           color={data?.results[0]?.category?.color}
           text={text}
+          link={link}
         />
         <div className="mt-5">
           <BreakingNews data={data?.results[0]} />

@@ -7,29 +7,28 @@ import baseUrl from "@/baseUrl";
 const Navbar = ({ handleShowSearchBar }) => {
   const router = useRouter();
   const [categories, setCategories] = useState([]);
+  const [logo, setLogo] = useState("");
 
   const fetchLinks = async () => {
-    const { data } = await baseUrl.get(
-      "http://vps97897.serveur-vps.net/category/"
-    );
+    const { data } = await baseUrl.get("/category/");
     setCategories(data?.results);
+  };
+
+  const fetchLogo = async () => {
+    const { data: logo } = await baseUrl.get("/settings/");
+    setLogo(logo?.results[0]?.navbar_logo);
   };
 
   useEffect(() => {
     fetchLinks();
+    fetchLogo();
   }, []);
 
   return (
     <nav className="navbar navbar-expand-lg bg-white">
       <div className="container">
         <Link className="navbar-brand me-0" href="/">
-          <Image
-            src="/images/inews_logo.png"
-            alt="iNEWS"
-            width={130}
-            height={40}
-            priority
-          />
+          <img src={logo} alt="i-news" width={130} height={40} priority />
         </Link>
         <button
           className="navbar-toggler"
@@ -82,7 +81,10 @@ const Navbar = ({ handleShowSearchBar }) => {
                 {categories?.slice(5).map((category) => {
                   return (
                     <li key={category?.id}>
-                      <Link className="dropdown-item" href={`/${category.id}`}>
+                      <Link
+                        className="dropdown-item"
+                        href={`/categories/${category.id}`}
+                      >
                         {category?.name}
                       </Link>
                     </li>

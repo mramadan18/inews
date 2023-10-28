@@ -12,24 +12,45 @@ import "swiper/css/navigation";
 import { FreeMode } from "swiper";
 import { Navigation } from "swiper";
 import Link from "next/link";
+import baseUrl from "@/baseUrl";
 
-const OurPogram = () => {
+const OurPogram = ({ data }) => {
   return (
     <main>
       <div className="container">
         <TitlePage title="برامجنا" />
-
         <div className="border-top p-4 bg-white">
           <div className="row">
             <div className="col-lg-7">
-              <video
-                style={{
-                  width: "100%",
-                  height: "360px",
-                }}
-                src="/videos/video.mp4"
-                controls
-              ></video>
+              <div className="position-relative w-100 h-100">
+                {/* <div className="position-absolute w-100 h-100 bg-black bg-opacity-50 d-flex justify-content-center align-items-center overflow-hidden">
+                  <a
+                    href={data?.results[0]?.videos[0]?.video_url}
+                    target="__blank"
+                  >
+                    <img
+                      src="/images/icons/play_icon.png"
+                      alt="play video"
+                      width={50}
+                      height={50}
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </a>
+                </div> */}
+
+                <iframe
+                  src={`https://www.youtube.com/embed/${data?.results[0]?.videos[0]?.video_id}`}
+                  style={{ height: "350px" }}
+                  title={data?.results[0]?.videos[0].title}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
 
             <div className="col-lg-5">
@@ -40,199 +61,68 @@ const OurPogram = () => {
                   letterSpacing: "2px",
                 }}
               >
-                برنامج شريط أصفر
+                {data?.results[0]?.name}
               </h6>
               <h5 className="line-height-35 fw-semibold mb-3">
-                خدمت مع وزير الدفاع الحالي ولحد الان ما حصلت على قطعة ارض
+                {data?.results[0]?.videos[0].title}
               </h5>
               <p className="line-height-35">
-                لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل
-                ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ، وعند
-                موافقه العميل المبدئيه على التصميم يتم ازالة هذا النص من التصميم
-                ويتم وضع النصوص النهائية المطلوبة . لوريم ايبسوم هو نموذج
-                افتراضي يوضع في التصاميم لتعرض على العميل .
+                {data?.results[0]?.videos[0]?.description}
               </p>
               <div className="date mt-4 text-gray">
-                16 مايو 2023 الساعة الرابعة مساءًا
+                {new Date(data?.results[0]?.created_at).toLocaleDateString(
+                  "ar-eg",
+                  {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }
+                )}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-5">
-          <SubTitle title="برنامج شريط أصفر" color="#D30707" more={false} />
+        {data?.results?.map((program) => {
+          return (
+            <div className="mt-5" key={program?.id}>
+              <SubTitle
+                title={program?.name}
+                color="#D30707"
+                more
+                link={`/programme/${program?.id}`}
+              />
 
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={true}
-            modules={[FreeMode, Navigation]}
-            className="mySwiper mt-4"
-          >
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
-        <div className="mt-5">
-          <SubTitle title="برنامج شريط أصفر" color="#D30707" more={false} />
-
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={true}
-            modules={[FreeMode, Navigation]}
-            className="mySwiper mt-4"
-          >
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
-        <div className="mt-5">
-          <SubTitle title="برنامج شريط أصفر" color="#D30707" more={false} />
-
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={true}
-            modules={[FreeMode, Navigation]}
-            className="mySwiper mt-4"
-          >
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
-        <div className="mt-5">
-          <SubTitle title="برنامج شريط أصفر" color="#D30707" more={false} />
-
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={true}
-            modules={[FreeMode, Navigation]}
-            className="mySwiper mt-4"
-          >
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide className="me-0">
-              <Link href="/episode-of-the-programme">
-                <VideoNewsCard img={"/images/img_13.png"} />
-              </Link>
-            </SwiperSlide>
-          </Swiper>
-        </div>
+              <Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                navigation={true}
+                modules={[FreeMode, Navigation]}
+                className="mySwiper mt-4"
+              >
+                {program?.videos?.map((video) => {
+                  return (
+                    <SwiperSlide className="me-0">
+                      <Link href="/episode-of-the-programme">
+                        <VideoNewsCard data={video} />
+                      </Link>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+          );
+        })}
       </div>
     </main>
   );
 };
 
 export default OurPogram;
+
+export async function getServerSideProps(context) {
+  const { data } = await baseUrl.get("/programs/");
+
+  return { props: { data } };
+}

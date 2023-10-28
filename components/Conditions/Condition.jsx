@@ -1,9 +1,11 @@
-const Condition = ({ title, desc, desc2 }) => {
+const Condition = ({ title, desc }) => {
   return (
     <div className="mt-4">
       <h5 className="text-blue fw-bold mb-3 line-height-35">{title}</h5>
-      <p className="text-black line-height-35 mb-3">{desc}</p>
-      <p className="text-black line-height-35">{desc2}</p>
+      <p
+        className="text-black line-height-35 mb-3"
+        dangerouslySetInnerHTML={{ __html: desc }}
+      />
     </div>
   );
 };

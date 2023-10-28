@@ -2,10 +2,9 @@
 import baseUrl from "@/baseUrl";
 import NewsCard from "@/components/Home/NewsCard";
 import SubTitle from "@/components/Utilities/SubTitle";
-import Image from "next/image";
 import Link from "next/link";
 
-const News = ({ data }) => {
+const News = ({ data, related }) => {
   return (
     <main>
       <div className="container">
@@ -24,7 +23,14 @@ const News = ({ data }) => {
                 {data?.title_ar}
               </h4>
               <div className="date text-gray">
-                16 مايو 2023 الساعة الرابعة مساءًا
+                {new Date(data?.created_at).toLocaleDateString("ar-eg", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                })}
               </div>
 
               <img
@@ -110,24 +116,11 @@ const News = ({ data }) => {
           <SubTitle title="أخبار ذات صلة" color="#D30707" more={false} />
 
           <div className="row mt-4">
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_11.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_12.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_13.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_12.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_13.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_11.png"} />
-            </div>
+            {related?.results?.map((item) => (
+              <div key={item.id} className="col-md-6 col-lg-4 mb-3">
+                <NewsCard data={item} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -138,9 +131,8 @@ const News = ({ data }) => {
 export default News;
 
 export const getServerSideProps = async (context) => {
-  const { data } = await baseUrl.get(
-    `http://vps97897.serveur-vps.net/posts/${context.params.postId}`
-  );
+  const { data } = await baseUrl.get(`/posts/${context.params.postId}`);
+  const { data: related } = await baseUrl.get(`/posts/?limit=6&category=2`);
 
-  return { props: { data } };
+  return { props: { data, related } };
 };

@@ -21,7 +21,7 @@ const NewsCard = ({ data }) => {
       >
         <p
           className="overflow-hidden"
-          style={{ height: "80px" }}
+          style={{ height: "100px" }}
           dangerouslySetInnerHTML={{
             __html:
               data?.title_ar +

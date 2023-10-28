@@ -1,10 +1,14 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import ReactPaginate from "react-paginate";
 
-const PaginationComponent = () => {
-  const handlePageClick = (e) => {
-    handlePagination(e.selected + 1);
+const PaginationComponent = ({ pageCount }) => {
+  const { push, query } = useRouter();
+
+  const handlePageClick = ({ selected }) => {
+    push(`/categories/${query.categoryId}/?page=${selected + 1}`);
   };
+
   return (
     <ReactPaginate
       breakLabel="..."
@@ -18,8 +22,9 @@ const PaginationComponent = () => {
       }
       onPageChange={handlePageClick}
       marginPagesDisplayed={1}
-      pageRangeDisplayed={2}
-      pageCount={12}
+      pageRangeDisplayed={0}
+      initialPage={query?.page - 1 || 0}
+      pageCount={pageCount}
       previousLabel={
         <Image
           src="/images/icons/arrow_right.svg"

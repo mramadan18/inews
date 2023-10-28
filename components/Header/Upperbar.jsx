@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import baseUrl from "@/baseUrl";
 
 const Upperbar = () => {
@@ -40,12 +39,6 @@ const Upperbar = () => {
                 handleLang("en");
               }}
             >
-              <Image
-                src="/images/icons/en.png"
-                alt="en"
-                width={24}
-                height={24}
-              />
               <span>EN</span>
             </a>
           ) : (
@@ -56,12 +49,6 @@ const Upperbar = () => {
                 handleLang("ar");
               }}
             >
-              <Image
-                src="/images/icons/ar.png"
-                alt="ar"
-                width={24}
-                height={24}
-              />
               <span>AR</span>
             </a>
           )}

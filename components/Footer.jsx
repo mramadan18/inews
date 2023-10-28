@@ -8,6 +8,7 @@ const Footer = () => {
   const [isSubscribe, setIsSubscribe] = useState(false);
   const [social, setSocial] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [settings, setSettings] = useState({});
 
   const getSocialMedia = async () => {
     const { data } = await baseUrl.get(
@@ -23,6 +24,11 @@ const Footer = () => {
     setCategories(data?.results);
   };
 
+  const fetchSettings = async () => {
+    const { data } = await baseUrl.get("/settings/");
+    setSettings(data?.results[0]);
+  };
+
   const handleSubscribe = () => {
     setIsSubscribe(true);
 
@@ -34,6 +40,7 @@ const Footer = () => {
   useEffect(() => {
     getSocialMedia();
     fetchLinks();
+    fetchSettings();
   }, []);
 
   return (
@@ -41,9 +48,9 @@ const Footer = () => {
       <div className="container position-relative">
         <div className="row">
           <div className="col-lg-3 d-flex flex-column justify-content-center align-items-center gap-4">
-            <Image
-              src={"/images/inews_logo.png"}
-              alt="iNEWS"
+            <img
+              src={settings?.footer_logo}
+              alt="i-news"
               width={130}
               height={40}
             />
@@ -52,30 +59,26 @@ const Footer = () => {
               style={{
                 lineHeight: "30px",
               }}
-            >
-              إخبارية عامة تعنى بالشأن العراقي والإقليمي والدولي بتفصيلاته كافة
-              تبث من جمهورية العراق. على التردد 11258 H
-            </p>
+              dangerouslySetInnerHTML={{ __html: settings?.footer_short_desc }}
+            />
 
             <div className="d-flex justify-content-center align-items-center gap-3">
               {social?.map((item) => {
                 return (
-                  <>
-                    <a
-                      key={item.id}
-                      href={item.url}
-                      target="__blank"
-                      className="d-flex justify-content-center align-items-center rounded-circle border border-2 border-dark"
-                      style={{ width: "35px", height: "35px" }}
-                    >
-                      <img
-                        src={item.logo}
-                        alt={item.name_ar}
-                        width={24}
-                        height={24}
-                      />
-                    </a>
-                  </>
+                  <a
+                    key={item.id}
+                    href={item.url}
+                    target="__blank"
+                    className="d-flex justify-content-center align-items-center rounded-circle border border-2 border-dark"
+                    style={{ width: "35px", height: "35px" }}
+                  >
+                    <img
+                      src={item.logo}
+                      alt={item.name_ar}
+                      width={24}
+                      height={24}
+                    />
+                  </a>
                 );
               })}
               {/* <div

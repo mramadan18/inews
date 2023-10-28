@@ -10,9 +10,7 @@ function MyApp({ Component, pageProps, categories }) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.min.js");
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    setLoading(false);
   }, []);
 
   return (

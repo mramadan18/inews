@@ -4,12 +4,13 @@ import SubTitle from "../Utilities/SubTitle";
 import NewsCard from "./NewsCard";
 import Link from "next/link";
 
-const HealthSection = ({ data }) => {
+const HealthSection = ({ data, link }) => {
   return (
     <div className="mt-5">
       <SubTitle
         title={data?.results[0]?.category?.name}
         color={data?.results[0]?.category?.color}
+        link={link}
       />
 
       <div className="row mt-5 overflow-hidden">

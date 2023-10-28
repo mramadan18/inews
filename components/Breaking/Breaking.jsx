@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Breaking = () => {
+const Breaking = ({ data }) => {
   return (
     <div className="border-bottom border-right bg-gray p-4">
       <div className="row align-items-center">
@@ -13,14 +13,17 @@ const Breaking = () => {
           />
         </div>
         <div className="col-2">
-          <span>قبل 30 دقيقة</span>
+          <span>
+            {new Date(data?.created_at).toLocaleDateString("ar-eg", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
         </div>
         <div className="col-9">
-          <p className="line-height-35">
-            لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل
-            ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور
-            او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...
-          </p>
+          <p className="line-height-35">{data?.content}</p>
         </div>
       </div>
     </div>

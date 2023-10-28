@@ -1,6 +1,20 @@
+import baseUrl from "@/baseUrl";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const SocialMediaIcons = () => {
+  const [social, setSocial] = useState([]);
+  const getSocialMedia = async () => {
+    const { data } = await baseUrl.get(
+      "http://vps97897.serveur-vps.net/settings/links/"
+    );
+    setSocial(data.results);
+  };
+
+  useEffect(() => {
+    getSocialMedia();
+  }, []);
+
   return (
     <div
       className="position-fixed d-none d-lg-block z-2 top-50 translate-middle-y"
@@ -9,7 +23,21 @@ const SocialMediaIcons = () => {
       }}
     >
       <div className="d-flex flex-column justify-content-center align-items-center gap-3">
-        <a href="#">
+        {social?.map((item) => {
+          return (
+            <a key={item.id} href={item.url} target="__blank">
+              <img
+                className="animate-scale"
+                src={item.logo}
+                alt={item.name_ar}
+                width={40}
+                height={40}
+              />
+            </a>
+          );
+        })}
+
+        {/* <a href="#">
           <Image
             className="animate-scale"
             src="/images/icons/facebook.png"
@@ -62,7 +90,7 @@ const SocialMediaIcons = () => {
             height={40}
             alt="instagram"
           />
-        </a>
+        </a> */}
       </div>
     </div>
   );
