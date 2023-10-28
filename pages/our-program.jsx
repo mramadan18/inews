@@ -101,9 +101,9 @@ const OurPogram = ({ data }) => {
                 modules={[FreeMode, Navigation]}
                 className="mySwiper mt-4"
               >
-                {program?.videos?.map((video) => {
+                {program?.videos?.map((video, index) => {
                   return (
-                    <SwiperSlide key={video._id} className="me-0">
+                    <SwiperSlide key={index} className="me-0">
                       <Link href="/episode-of-the-programme">
                         <VideoNewsCard data={video} />
                       </Link>
