@@ -103,7 +103,7 @@ const OurPogram = ({ data }) => {
               >
                 {program?.videos?.map((video) => {
                   return (
-                    <SwiperSlide className="me-0">
+                    <SwiperSlide key={video._id} className="me-0">
                       <Link href="/episode-of-the-programme">
                         <VideoNewsCard data={video} />
                       </Link>
