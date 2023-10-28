@@ -16,9 +16,9 @@ const EpisodeOfTheProgramme = ({ data }) => {
                 src={`https://www.youtube.com/embed/${data?.videos[0]?.video_id}`}
                 style={{ height: "350px" }}
                 title={data?.videos[0].title}
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
 

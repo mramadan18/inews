@@ -46,9 +46,9 @@ const OurPogram = ({ data }) => {
                   src={`https://www.youtube.com/embed/${data?.results[0]?.videos[0]?.video_id}`}
                   style={{ height: "350px" }}
                   title={data?.results[0]?.videos[0].title}
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
@@ -101,9 +101,9 @@ const OurPogram = ({ data }) => {
                 modules={[FreeMode, Navigation]}
                 className="mySwiper mt-4"
               >
-                {program?.videos?.map((video, index) => {
+                {program?.videos?.map((video) => {
                   return (
-                    <SwiperSlide key={index} className="me-0">
+                    <SwiperSlide className="me-0">
                       <Link href="/episode-of-the-programme">
                         <VideoNewsCard data={video} />
                       </Link>

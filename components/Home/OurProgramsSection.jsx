@@ -50,8 +50,8 @@ const OurProgramsSection = ({
             modules={[Autoplay, FreeMode]}
             className="mySwiper mt-4 pb-4"
           >
-            {data?.results[0]?.videos?.map((video) => (
-              <SwiperSlide key={video._id}>
+            {data?.results[0]?.videos?.map((video, index) => (
+              <SwiperSlide key={index}>
                 <VideoNewsCard data={video} />
               </SwiperSlide>
             ))}

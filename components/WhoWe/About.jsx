@@ -12,7 +12,6 @@ const About = ({ aboutUs }) => {
             width={620}
             height={343}
             alt={aboutUs?.main_header_ar}
-            priority
           />
         </div>
         <div className="col-lg-8">

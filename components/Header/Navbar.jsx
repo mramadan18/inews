@@ -28,7 +28,7 @@ const Navbar = ({ handleShowSearchBar }) => {
     <nav className="navbar navbar-expand-lg bg-white">
       <div className="container">
         <Link className="navbar-brand me-0" href="/">
-          <img src={logo} alt="i-news" width={130} height={40} priority />
+          <img src={logo} alt="i-news" width={130} height={40} />
         </Link>
         <button
           className="navbar-toggler"
